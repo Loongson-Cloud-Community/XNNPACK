@@ -218,6 +218,9 @@ SET(ALL_AVX_MICROKERNEL_SRCS
   src/f32-vrnd/gen/f32-vrndu-avx-u16.c
   src/f32-vrnd/gen/f32-vrndz-avx-u8.c
   src/f32-vrnd/gen/f32-vrndz-avx-u16.c
+  src/f32-vrsqrt/gen/f32-vsqrt-avx-rsqrt-u8.c
+  src/f32-vrsqrt/gen/f32-vsqrt-avx-rsqrt-u16.c
+  src/f32-vrsqrt/gen/f32-vsqrt-avx-rsqrt-u32.c
   src/f32-vsigmoid/gen/f32-vsigmoid-avx-rr2-p5-div-u8.c
   src/f32-vsigmoid/gen/f32-vsigmoid-avx-rr2-p5-div-u16.c
   src/f32-vsigmoid/gen/f32-vsigmoid-avx-rr2-p5-div-u24.c
@@ -238,6 +241,14 @@ SET(ALL_AVX_MICROKERNEL_SRCS
   src/f32-vsigmoid/gen/f32-vsigmoid-avx-rr2-p5-nr2-u64.c
   src/f32-vsigmoid/gen/f32-vsigmoid-avx-rr2-p5-nr2-u72.c
   src/f32-vsigmoid/gen/f32-vsigmoid-avx-rr2-p5-nr2-u80.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx-rsqrt-u8.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx-rsqrt-u16.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx-rsqrt-u24.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx-rsqrt-u32.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx-rsqrt-u40.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx-rsqrt-u48.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx-rsqrt-u56.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx-rsqrt-u64.c
   src/f32-vsqrt/gen/f32-vsqrt-avx-sqrt-u8.c
   src/f32-vsqrt/gen/f32-vsqrt-avx-sqrt-u16.c
   src/f32-vtanh/gen/f32-vtanh-avx-expm1minus-rr1-lut4-p4h2ts-perm-div-u8.c
@@ -1315,6 +1326,9 @@ SET(ALL_AVX512F_MICROKERNEL_SRCS
   src/f32-vrnd/gen/f32-vrndu-avx512f-u32.c
   src/f32-vrnd/gen/f32-vrndz-avx512f-u16.c
   src/f32-vrnd/gen/f32-vrndz-avx512f-u32.c
+  src/f32-vrsqrt/gen/f32-vsqrt-avx512f-rsqrt-u16.c
+  src/f32-vrsqrt/gen/f32-vsqrt-avx512f-rsqrt-u32.c
+  src/f32-vrsqrt/gen/f32-vsqrt-avx512f-rsqrt-u64.c
   src/f32-vscaleexpminusmax/gen/f32-vscaleexpminusmax-avx512f-p5-scalef-u16.c
   src/f32-vscaleexpminusmax/gen/f32-vscaleexpminusmax-avx512f-p5-scalef-u32.c
   src/f32-vscaleexpminusmax/gen/f32-vscaleexpminusmax-avx512f-p5-scalef-u48.c
@@ -1395,6 +1409,14 @@ SET(ALL_AVX512F_MICROKERNEL_SRCS
   src/f32-vsqrt/gen/f32-vsqrt-avx512f-nr1fma1adj-u96.c
   src/f32-vsqrt/gen/f32-vsqrt-avx512f-nr1fma1adj-u112.c
   src/f32-vsqrt/gen/f32-vsqrt-avx512f-nr1fma1adj-u128.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx512f-rsqrt-u16.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx512f-rsqrt-u32.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx512f-rsqrt-u48.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx512f-rsqrt-u64.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx512f-rsqrt-u80.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx512f-rsqrt-u96.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx512f-rsqrt-u112.c
+  src/f32-vsqrt/gen/f32-vsqrt-avx512f-rsqrt-u128.c
   src/f32-vunary/gen/f32-vabs-avx512f-u16.c
   src/f32-vunary/gen/f32-vabs-avx512f-u32.c
   src/f32-vunary/gen/f32-vneg-avx512f-u16.c
@@ -2682,6 +2704,9 @@ SET(ALL_FMA3_MICROKERNEL_SRCS
   src/f32-qc8w-gemm/gen/f32-qc8w-gemm-8x16-minmax-fma3-broadcast.c
   src/f32-vhswish/gen/f32-vhswish-fma3-u8.c
   src/f32-vhswish/gen/f32-vhswish-fma3-u16.c
+  src/f32-vrsqrt/gen/f32-vsqrt-fma3-rsqrt-u8.c
+  src/f32-vrsqrt/gen/f32-vsqrt-fma3-rsqrt-u16.c
+  src/f32-vrsqrt/gen/f32-vsqrt-fma3-rsqrt-u32.c
   src/f32-vsqrt/gen/f32-vsqrt-fma3-nr1fma1adj-u8.c
   src/f32-vsqrt/gen/f32-vsqrt-fma3-nr1fma1adj-u16.c
   src/f32-vsqrt/gen/f32-vsqrt-fma3-nr1fma1adj-u24.c
@@ -2690,6 +2715,14 @@ SET(ALL_FMA3_MICROKERNEL_SRCS
   src/f32-vsqrt/gen/f32-vsqrt-fma3-nr1fma1adj-u48.c
   src/f32-vsqrt/gen/f32-vsqrt-fma3-nr1fma1adj-u56.c
   src/f32-vsqrt/gen/f32-vsqrt-fma3-nr1fma1adj-u64.c
+  src/f32-vsqrt/gen/f32-vsqrt-fma3-rsqrt-u8.c
+  src/f32-vsqrt/gen/f32-vsqrt-fma3-rsqrt-u16.c
+  src/f32-vsqrt/gen/f32-vsqrt-fma3-rsqrt-u24.c
+  src/f32-vsqrt/gen/f32-vsqrt-fma3-rsqrt-u32.c
+  src/f32-vsqrt/gen/f32-vsqrt-fma3-rsqrt-u40.c
+  src/f32-vsqrt/gen/f32-vsqrt-fma3-rsqrt-u48.c
+  src/f32-vsqrt/gen/f32-vsqrt-fma3-rsqrt-u56.c
+  src/f32-vsqrt/gen/f32-vsqrt-fma3-rsqrt-u64.c
   src/f32-vtanh/gen/f32-vtanh-fma3-expm1minus-rr1-lut4-p4h3ts-perm-div-u8.c
   src/f32-vtanh/gen/f32-vtanh-fma3-expm1minus-rr1-lut4-p4h3ts-perm-div-u16.c
   src/f32-vtanh/gen/f32-vtanh-fma3-expm1minus-rr1-lut4-p4h3ts-perm-div-u24.c
@@ -6672,6 +6705,17 @@ SET(ALL_SSE_MICROKERNEL_SRCS
   src/f32-vmulcaddc/gen/f32-vmulcaddc-c8-minmax-sse-2x.c
   src/f32-vrelu/gen/f32-vrelu-sse-u4.c
   src/f32-vrelu/gen/f32-vrelu-sse-u8.c
+  src/f32-vrsqrt/gen/f32-vsqrt-sse-rsqrt-u4.c
+  src/f32-vrsqrt/gen/f32-vsqrt-sse-rsqrt-u8.c
+  src/f32-vrsqrt/gen/f32-vsqrt-sse-rsqrt-u16.c
+  src/f32-vsqrt/gen/f32-vsqrt-sse-rsqrt-u8.c
+  src/f32-vsqrt/gen/f32-vsqrt-sse-rsqrt-u16.c
+  src/f32-vsqrt/gen/f32-vsqrt-sse-rsqrt-u24.c
+  src/f32-vsqrt/gen/f32-vsqrt-sse-rsqrt-u32.c
+  src/f32-vsqrt/gen/f32-vsqrt-sse-rsqrt-u40.c
+  src/f32-vsqrt/gen/f32-vsqrt-sse-rsqrt-u48.c
+  src/f32-vsqrt/gen/f32-vsqrt-sse-rsqrt-u56.c
+  src/f32-vsqrt/gen/f32-vsqrt-sse-rsqrt-u64.c
   src/f32-vsqrt/gen/f32-vsqrt-sse-sqrt-u4.c
   src/f32-vsqrt/gen/f32-vsqrt-sse-sqrt-u8.c
   src/f32-vunary/gen/f32-vabs-sse-u4.c

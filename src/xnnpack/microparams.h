@@ -2737,7 +2737,12 @@ union xnn_f32_sqrt_params {
 // Rsqrt (Reciprocal Square Root): used by VRSQRT microkernels.
 
 union xnn_f32_rsqrt_params {
-  char _;  // Dummy member variable to comply with the C standard
+  char _;  // Dummy member variable to comply with the C standard.
+#if XNN_ARCH_X86 || XNN_ARCH_X86_64
+  struct {
+    int32_t mask_table[14];
+  } avx;
+#endif  // XNN_ARCH_X86 || XNN_ARCH_X86_64
 };
 
 // TanH (Hyperbolic Tangent): used by VTANH microkernels.
