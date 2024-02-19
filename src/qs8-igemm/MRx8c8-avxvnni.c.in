@@ -238,7 +238,7 @@ void xnn_${DATATYPE_SPEC}_igemm_minmax${REQUANTIZATION_SPEC}_ukernel_${MR}x8c8__
       $for M in range(MR):
         vout${M}x01234567 = _mm256_min_ps(vout${M}x01234567, voutput_max);
 
-      if(nc >= 8) {
+      if XNN_LIKELY(nc >= 8) {
         $for M in reversed(range(MR)):
           _mm256_storeu_ps(c${M}, vout${M}x01234567);
           c${M} = (float*) ((uintptr_t) c${M} + cn_stride);
